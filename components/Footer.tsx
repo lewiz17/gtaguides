@@ -15,6 +15,7 @@ export function Footer() {
           <Link href="/guias">Todas las guías</Link>
           <Link href="/sobre-nosotros">Fuentes y metodología</Link>
           <Link href="/privacidad">Privacidad</Link>
+          <Link href="/mapa">Mapa interactivo</Link>
           <a href="/feed.xml">RSS</a>
           <a href="/llms.txt">llms.txt</a>
         </div>

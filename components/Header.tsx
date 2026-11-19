@@ -12,6 +12,7 @@ export function Header() {
           <Link href="/guias">Guías</Link>
           <Link href="/buscar">Buscar</Link>
           <Link href="/sobre-nosotros">Cómo verificamos</Link>
+          <Link href="/mapa">Explora el Mapa</Link>
         </nav>
         <a className="header-status" href="/guia/gta-6-hora-lanzamiento-colombia">
           <span className="status-dot" /> EDICIÓN LANZAMIENTO
