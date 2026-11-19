@@ -1,4 +1,5 @@
 ---
+status: draft
 slug: mi-guia-nueva
 title: "Título claro con la pregunta principal"
 seoTitle: "Título SEO directo | Radar Leonida"

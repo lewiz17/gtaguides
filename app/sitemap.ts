@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/', priority: 1, frequency: 'daily' as const },
     { path: '/guias', priority: 0.9, frequency: 'daily' as const },
     { path: '/sobre-nosotros', priority: 0.4, frequency: 'monthly' as const },
+    { path: '/privacidad', priority: 0.3, frequency: 'monthly' as const },
   ];
   const staticEntries = staticRoutes.map((route) => ({
     url: canonical(route.path),

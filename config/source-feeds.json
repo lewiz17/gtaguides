@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Rockstar Games — YouTube oficial",
+    "tier": "PRIMARIA · oficial",
+    "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC6VcWc1rAoWdBCM0JxrRQ3A",
+    "note": "Muestra publicaciones recientes del canal oficial; confirma que cada elemento trate de GTA VI y abre el enlace original."
+  },
+  {
+    "name": "Google News — Rockstar Newswire / GTA VI",
+    "tier": "ALERTA · comprobar en Rockstar",
+    "url": "https://news.google.com/rss/search?q=site%3Arockstargames.com%2Fnewswire+%22Grand+Theft+Auto+VI%22&hl=en-US&gl=US&ceid=US%3Aen",
+    "note": "Feed de descubrimiento; Google News no es la fuente editorial. Confirma cada hecho en Newswire."
+  },
+  {
+    "name": "Google News — Rockstar Support / GTA VI",
+    "tier": "ALERTA · comprobar en soporte",
+    "url": "https://news.google.com/rss/search?q=site%3Asupport.rockstargames.com+%22Grand+Theft+Auto+VI%22&hl=en-US&gl=US&ceid=US%3Aen",
+    "note": "Útil para incidencias, instalación y cambios de soporte. Verifica el artículo en Rockstar Support."
+  },
+  {
+    "name": "Google News — GTA 6 cheat codes",
+    "tier": "ALERTA · descubrimiento, no prueba",
+    "url": "https://news.google.com/rss/search?q=%22GTA+6%22+%22cheat+codes%22&hl=en-US&gl=US&ceid=US%3Aen",
+    "note": "Sólo sirve para descubrir conversaciones. No publiques códigos sin probarlos en juego y anotar consola/fecha."
+  }
+]

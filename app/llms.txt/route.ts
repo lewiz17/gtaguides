@@ -26,6 +26,7 @@ export function GET() {
     `- [Inicio](${canonical('/')})`,
     `- [Índice de guías](${canonical('/guias')})`,
     `- [Fuentes y metodología](${canonical('/sobre-nosotros')})`,
+    `- [Privacidad](${canonical('/privacidad')})`,
     `- [RSS](${canonical('/feed.xml')})`,
     '',
     '## Estándares editoriales',

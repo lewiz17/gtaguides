@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 export type FAQ = { question: string; answer: string };
 export type Source = { label: string; url: string };
 export type AffiliateItem = { title: string; description: string; searchTerm: string };
+export type ArticleStatus = 'draft' | 'published';
 
 export type Article = {
   slug: string;
@@ -16,6 +17,7 @@ export type Article = {
   datePublished: string;
   dateModified: string;
   featured: boolean;
+  status: ArticleStatus;
   keywords: string[];
   answer: string;
   faq: FAQ[];
@@ -45,6 +47,7 @@ function readArticle(filename: string): Article {
     datePublished: dateString(data.datePublished),
     dateModified: dateString(data.dateModified ?? data.datePublished),
     featured: Boolean(data.featured),
+    status: data.status === 'draft' ? 'draft' : 'published',
     keywords: Array.isArray(data.keywords) ? data.keywords.map(String) : [],
     answer: String(data.answer ?? ''),
     faq: Array.isArray(data.faq) ? (data.faq as FAQ[]) : [],
@@ -59,6 +62,7 @@ export function getArticles(): Article[] {
   return fs.readdirSync(ARTICLES_DIR)
     .filter((filename) => filename.endsWith('.md'))
     .map(readArticle)
+    .filter((article) => article.status === 'published')
     .sort((a, b) => b.datePublished.localeCompare(a.datePublished) || Number(b.featured) - Number(a.featured) || a.title.localeCompare(b.title, 'es'));
 }
 

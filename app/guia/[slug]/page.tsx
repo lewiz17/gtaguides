@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { marked } from 'marked';
+import xss from 'xss';
 import { AffiliateBlock } from '@/components/AffiliateBlock';
 import { JsonLd } from '@/components/JsonLd';
 import { getArticle, getArticleSlugs, getArticles } from '@/lib/posts';
@@ -45,7 +46,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const article = getArticle(slug);
   if (!article) notFound();
 
-  const html = marked.parse(article.content, { async: false }) as string;
+  const html = xss(marked.parse(article.content, { async: false }) as string, {
+    whiteList: {
+      a: ['href', 'title'], blockquote: [], br: [], code: [], del: [], div: [], em: [],
+      h1: [], h2: [], h3: [], h4: [], h5: [], h6: [], hr: [], li: [], ol: [], p: [],
+      pre: [], span: [], strong: [], table: [], tbody: [], td: ['align'], th: ['align'],
+      thead: [], tr: [], ul: [],
+    },
+    stripIgnoreTag: true,
+    stripIgnoreTagBody: ['script', 'style', 'textarea', 'noscript', 'noembed', 'noframes', 'template'],
+  });
   const url = `/guia/${article.slug}`;
   const articleSchema = {
     '@context': 'https://schema.org',
